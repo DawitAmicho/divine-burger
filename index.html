@@ -123,10 +123,64 @@
         footer { padding: 80px 5%; background: var(--gray); text-align: center; border-top: 5px solid var(--red); }
         .footer-logo { height: 90px; margin-bottom: 25px; }
 
-        @media (max-width: 768px) {
-            .nav-links, .utility-bar { display: none; }
-            .marathon-text { font-size: 4.5rem; }
-        }
+       /* --- ENHANCED MOBILE OPTIMIZATION --- */
+@media (max-width: 768px) {
+    /* 1. Make the Hero Text fit perfectly */
+    .marathon-text { 
+        font-size: 3.8rem; 
+        line-height: 0.9;
+        letter-spacing: -2px;
+    }
+    .hero p {
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+
+    /* 2. Fix the Navigation Logo */
+    nav {
+        padding: 15px 5%;
+        justify-content: center; /* Centers logo on mobile */
+    }
+    .logo { 
+        height: 60px; 
+    }
+
+    /* 3. Adjust the "About" Section for better flow */
+    #about {
+        padding: 60px 5%;
+        flex-direction: column-reverse; /* Text first, then image */
+        gap: 40px;
+        text-align: center;
+    }
+    
+    /* Remove the heavy shadow on mobile so it doesn't feel cluttered */
+    #about img {
+        height: 350px;
+        box-shadow: 15px 15px 0px var(--red);
+    }
+
+    /* Centering the stats bar */
+    #about div[style*="display: grid"], 
+    #about div[style*="display: flex"] {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* 4. Make Menu Cards more compact */
+    .menu-grid {
+        padding: 10px 5% 60px;
+        gap: 15px;
+    }
+    .menu-card img {
+        height: 250px;
+    }
+    .menu-card-body {
+        padding: 15px;
+    }
+    .menu-card-body h3 {
+        font-size: 1.2rem;
+    }
+}
     </style>
 </head>
 <body>
