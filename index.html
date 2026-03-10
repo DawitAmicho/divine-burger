@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Divine Burger - Experience the best gourmet burgers at Bole behind Shulding. Fresh ingredients, signature sauce, and divine taste.">
+    <title>Divine Burger | Premium Gourmet Burgers</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #d4af37;
+            --red: #e63946;
+            --charcoal: #1a1a1a;
+            --white: #ffffff;
+        }
+
+        body { font-family: 'Montserrat', sans-serif; margin: 0; background: var(--white); overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Bebas Neue', cursive; letter-spacing: 2px; }
+
+        /* Navigation */
+        header {
+            background: rgba(26, 26, 26, 0.95);
+            padding: 0.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--red);
+        }
+
+        .logo-img { height: 60px; width: auto; }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--gold); }
+
+        /* Hero Video Section */
+        .hero-container {
+            position: relative;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        #bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            filter: brightness(40%);
+        }
+
+        .hero-content h1 { font-size: 5rem; margin: 0; color: var(--gold); text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+        .hero-content p { font-size: 1.4rem; margin-bottom: 2rem; }
+
+        .btn {
+            background: var(--red);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+        .btn:hover { transform: scale(1.05); background: #c52b36; }
+
+        /* Info Section */
+        .info-bar {
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 40px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            text-align: center;
+            gap: 20px;
+        }
+
+        .info-card h3 { color: var(--gold); margin-bottom: 5px; }
+
+        /* Menu Section */
+        .menu-section { padding: 80px 5%; text-align: center; }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        .menu-item { border: 1px solid #eee; padding: 20px; border-radius: 15px; transition: box-shadow 0.3s; }
+        .menu-item:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .menu-item img { width: 100%; border-radius: 10px; }
+
+        footer { background: #111; color: #777; padding: 40px; text-align: center; border-top: 1px solid #333; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="copy_6D3EC1E0-9E8D-4845-B40C-90C8C35FBAC8.jpg" alt="Divine Burger Logo" class="logo-img">
+        <nav class="nav-links">
+            <a href="#menu">Menu</a>
+            <a href="#location">Location</a>
+            <a href="tel:0965966465">Call Now</a>
+        </nav>
+    </header>
+
+    <section class="hero-container">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="8589168718550946723.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>DIVINE BURGER</h1>
+            <p>Bole's Premium Gourmet Burger Experience</p>
+            <a href="#menu" class="btn">Explore Menu</a>
+        </div>
+    </section>
+
+    <div class="info-bar">
+        <div class="info-card">
+            <h3>📍 Location</h3>
+            <p>Bole behind Shulding</p>
+        </div>
+        <div class="info-card">
+            <h3>📞 Order</h3>
+            <p>0965-966-465</p>
+        </div>
+        <div class="info-card">
+            <h3>📸 Instagram</h3>
+            <p>@divineburger_</p>
+        </div>
+    </div>
+
+    <section id="menu" class="menu-section">
+        <h2>Our Divine Menu</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80" alt="Burger">
+                <h3>The Divine Classic</h3>
+                <p>Signature beef patty with secret sauce.</p>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=500&q=80" alt="Burger">
+                <h3>The Bole Special</h3>
+                <p>Double cheese, caramelized onions, and spice.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="location">
+        <img src="copy_6D3EC1E0-9E8D-4845-B40C-90C8C35FBAC8.jpg" alt="Divine Burger" style="height: 50px; filter: grayscale(1); margin-bottom: 20px;">
+        <p>Bole behind Shulding, Addis Ababa</p>
+        <p>&copy; 2026 Divine Burger. Locally Crafted Excellence.</p>
+    </footer>
+
+</body>
+</html>
