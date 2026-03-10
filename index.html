@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Divine Burger | Premium Gourmet Burgers Bole</title>
+    <meta name="description" content="Divine Burger - Premium Gourmet Burgers in Bole, behind Sheger Building. Try the Divine Junkie & Triple Stuffed. Call 0965966465.">
+    <title>Divine Burger | Premium Gourmet Burgers | Bole, Addis Ababa</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --red: #e63946; /* Matching your logo red */
-            --gold: #d4af37;
+            --red: #e63946;
             --dark: #000000;
             --light: #ffffff;
+            --gray: #f9f9f9;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Montserrat', sans-serif; background: var(--light); color: var(--dark); overflow-x: hidden; }
+        body { font-family: 'Montserrat', sans-serif; background: var(--light); color: var(--dark); line-height: 1.6; }
 
         /* Navigation */
         nav {
@@ -24,12 +25,11 @@
             padding: 15px 5%; background: white; position: sticky; top: 0; z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-        .logo { height: 65px; width: auto; object-fit: contain; }
-        
-        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 700; margin-left: 25px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
-        .order-cta { background: var(--red); color: white !important; padding: 12px 24px; border-radius: 4px; border: none; font-weight: 700; cursor: pointer; }
+        .logo { height: 60px; width: auto; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 700; margin-left: 20px; font-size: 13px; text-transform: uppercase; }
+        .order-cta { background: var(--red); color: white !important; padding: 10px 20px; border-radius: 4px; }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
             position: relative; height: 85vh; display: flex; align-items: center; 
             justify-content: center; overflow: hidden; color: white; text-align: center;
@@ -38,46 +38,42 @@
             position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%;
             transform: translate(-50%, -50%); z-index: -1; object-fit: cover; filter: brightness(30%);
         }
-        
-        /* Marathon/Athletic Aesthetic with Red Color */
         .marathon-text { 
-            font-family: 'Inter', sans-serif; 
-            font-weight: 900;
-            font-size: clamp(3.5rem, 12vw, 9rem); 
-            letter-spacing: -0.05em; 
-            line-height: 0.85; 
-            text-transform: uppercase;
-            color: var(--red); /* Divine Burger is now Red */
-            margin-bottom: 15px;
+            font-family: 'Inter', sans-serif; font-weight: 900;
+            font-size: clamp(3.5rem, 12vw, 9rem); letter-spacing: -0.05em; 
+            line-height: 0.85; text-transform: uppercase; color: var(--red);
         }
+        .hero p { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-top: 15px; }
 
-        .hero p { 
-            font-size: 1.1rem; 
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-            font-weight: 700; 
-            color: var(--light); 
-            max-width: 600px;
-            margin: 0 auto;
+        /* SEO Contact Bar */
+        .info-bar {
+            background: var(--dark); color: white; padding: 30px 5%;
+            display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; gap: 30px;
         }
+        .info-item h4 { color: var(--red); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px; }
+        .info-item p, .info-item a { color: white; text-decoration: none; font-weight: 700; font-size: 1rem; }
+        .info-item a:hover { color: var(--red); }
 
-        /* Menu Grid */
-        .menu-preview {
+        /* Menu */
+        .section-title { text-align: center; padding: 80px 5% 20px; font-size: 2.5rem; font-weight: 900; text-transform: uppercase; }
+        .menu-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px; padding: 60px 5%;
+            gap: 25px; padding: 20px 5% 80px;
         }
-        .menu-card { background: #fff; border: 1px solid #eee; overflow: hidden; }
-        .menu-card img { width: 100%; height: 300px; object-fit: cover; }
+        .menu-card { background: white; border: 1px solid #eee; overflow: hidden; transition: transform 0.3s; }
+        .menu-card:hover { transform: translateY(-5px); }
+        .menu-card img { width: 100%; height: 320px; object-fit: cover; }
         .menu-card-body { padding: 25px; }
         .menu-card-body h3 { font-family: 'Inter', sans-serif; text-transform: uppercase; font-size: 1.4rem; font-weight: 900; }
         .price { color: var(--red); float: right; }
 
-        footer { padding: 80px 5%; background: var(--dark); color: white; text-align: center; }
-        .footer-logo { height: 80px; margin-bottom: 20px; }
+        footer { padding: 80px 5%; background: var(--gray); text-align: center; border-top: 5px solid var(--red); }
+        .footer-logo { height: 90px; margin-bottom: 25px; }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .marathon-text { font-size: 4rem; }
+            .info-bar { flex-direction: column; padding: 40px 5%; }
+            .marathon-text { font-size: 4.5rem; }
         }
     </style>
 </head>
@@ -87,6 +83,7 @@
         <img src="IMG_8690.jpeg" alt="Divine Burger Logo" class="logo">
         <div class="nav-links">
             <a href="#menu">Menu</a>
+            <a href="tel:0965966465">Call Us</a>
             <a href="https://wa.me/251965966465" class="order-cta">Order Now</a>
         </div>
     </nav>
@@ -101,35 +98,77 @@
         </div>
     </header>
 
-    <section id="menu" class="menu-preview">
-        <article class="menu-card">
-            <img src="IMG_8683.jpeg" alt="Divine Junkie">
-            <div class="menu-card-body">
-                <h3>Divine Junkie <span class="price">570 ETB</span></h3>
-                <p>Triple beef, egg, and signature house sauce.</p>
-            </div>
-        </article>
-        <article class="menu-card">
-            <img src="IMG_8686.jpeg" alt="Triple Stuffed">
-            <div class="menu-card-body">
-                <h3>Triple Stuffed <span class="price">630 ETB</span></h3>
-                <p>The ultimate protein experience for the marathon.</p>
-            </div>
-        </article>
-        <article class="menu-card">
-            <img src="IMG_8685.jpeg" alt="Milkshakes">
-            <div class="menu-card-body">
-                <h3>Gourmet Shakes <span class="price">Sweet Fix</span></h3>
-                <p>Premium creamy blends for the perfect finish.</p>
-            </div>
-        </article>
+    <section class="info-bar">
+        <div class="info-item">
+            <h4>📍 Location</h4>
+            <p>Bole, Behind Sheger Building</p>
+        </div>
+        <div class="info-item">
+            <h4>☎️ Order Line</h4>
+            <a href="tel:0965966465">0965 96 64 65</a>
+        </div>
+        <div class="info-item">
+            <h4>📸 Instagram</h4>
+            <a href="https://instagram.com/divineburger_" target="_blank">@divineburger_</a>
+        </div>
+    </section>
+
+    <section id="menu">
+        <h2 class="section-title">The Lineup</h2>
+        <div class="menu-grid">
+            <article class="menu-card">
+                <img src="IMG_8683.jpeg" alt="Divine Junkie Burger - Gourmet Burger Bole">
+                <div class="menu-card-body">
+                    <h3>Divine Junkie <span class="price">570 ETB</span></h3>
+                    <p>Double patty, double cheese, fried eggs, and signature house sauce.</p>
+                </div>
+            </article>
+            <article class="menu-card">
+                <img src="IMG_8686.jpeg" alt="Triple Stuffed Burger - Best Burger Addis Ababa">
+                <div class="menu-card-body">
+                    <h3>Triple Stuffed <span class="price">630 ETB</span></h3>
+                    <p>Triple patty, triple cheese, and premium sliced beef strips.</p>
+                </div>
+            </article>
+            <article class="menu-card">
+                <img src="IMG_8685.jpeg" alt="Divine Burger Signature Milkshakes">
+                <div class="menu-card-body">
+                    <h3>Gourmet Shakes <span class="price">Cool Down</span></h3>
+                    <p>Premium creamy blends designed for the ultimate burger companion.</p>
+                </div>
+            </article>
+        </div>
     </section>
 
     <footer>
-        <img src="IMG_8690.jpeg" alt="Divine Burger" class="footer-logo">
-        <p>Behind Shulding, Bole, Addis Ababa</p>
-        <p style="margin-top: 20px; opacity: 0.5; font-size: 11px; letter-spacing: 1px;">© 2026 DIVINE BURGER. ALL RIGHTS RESERVED.</p>
+        <img src="IMG_8690.jpeg" alt="Divine Burger Official Logo" class="footer-logo">
+        <p style="font-weight: 700; letter-spacing: 1px;">DIVINE BURGER ADDIS ABABA</p>
+        <p>Bole, Behind Sheger Building</p>
+        <div style="margin-top: 30px;">
+            <a href="https://instagram.com/divineburger_" style="margin: 0 15px; color: var(--dark); font-weight: 700; text-decoration: none;">Instagram</a>
+            <a href="tel:0965966465" style="margin: 0 15px; color: var(--dark); font-weight: 700; text-decoration: none;">Phone</a>
+        </div>
+        <p style="margin-top: 40px; opacity: 0.4; font-size: 10px; letter-spacing: 2px;">© 2026 DIVINE BURGER. THE MARATHON CONTINUES.</p>
     </footer>
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Divine Burger",
+      "image": "IMG_8690.jpeg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bole, Behind Sheger Building",
+        "addressLocality": "Addis Ababa",
+        "addressCountry": "ET"
+      },
+      "telephone": "+251965966465",
+      "url": "https://divineburger.netlify.app",
+      "menu": "https://divineburger.netlify.app#menu",
+      "servesCuisine": "Gourmet Burgers",
+      "priceRange": "ETB"
+    }
+    </script>
 </body>
 </html>
