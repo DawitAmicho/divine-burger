@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Divine Burger | Gourmet Burger House</title>
+    <title>Divine Burger | Premium Gourmet Burgers Bole</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --red: #e63946;
+            --red: #e63946; /* Matching your logo red */
             --gold: #d4af37;
             --dark: #000000;
             --light: #ffffff;
@@ -24,11 +24,10 @@
             padding: 15px 5%; background: white; position: sticky; top: 0; z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-        /* FIXED LOGO NAME BELOW */
         .logo { height: 65px; width: auto; object-fit: contain; }
         
         .nav-links a { text-decoration: none; color: var(--dark); font-weight: 700; margin-left: 25px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
-        .order-cta { background: var(--red); color: white !important; padding: 12px 24px; border-radius: 4px; }
+        .order-cta { background: var(--red); color: white !important; padding: 12px 24px; border-radius: 4px; border: none; font-weight: 700; cursor: pointer; }
 
         /* Hero Section */
         .hero {
@@ -37,41 +36,49 @@
         }
         .hero-video {
             position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%;
-            transform: translate(-50%, -50%); z-index: -1; object-fit: cover; filter: brightness(35%);
+            transform: translate(-50%, -50%); z-index: -1; object-fit: cover; filter: brightness(30%);
         }
         
-        /* Marathon/Athletic Aesthetic Font Style */
+        /* Marathon/Athletic Aesthetic with Red Color */
         .marathon-text { 
             font-family: 'Inter', sans-serif; 
             font-weight: 900;
             font-size: clamp(3.5rem, 12vw, 9rem); 
-            letter-spacing: -0.05em; /* Tighter spacing for that athletic look */
+            letter-spacing: -0.05em; 
             line-height: 0.85; 
             text-transform: uppercase;
-            color: var(--light);
-            margin-bottom: 10px;
+            color: var(--red); /* Divine Burger is now Red */
+            margin-bottom: 15px;
         }
 
-        .hero p { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 4px; font-weight: 400; color: var(--gold); }
+        .hero p { 
+            font-size: 1.1rem; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            font-weight: 700; 
+            color: var(--light); 
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
         /* Menu Grid */
         .menu-preview {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px; padding: 60px 5%;
         }
-        .menu-card { background: #fff; border: 1px solid #eee; overflow: hidden; transition: 0.3s; }
+        .menu-card { background: #fff; border: 1px solid #eee; overflow: hidden; }
         .menu-card img { width: 100%; height: 300px; object-fit: cover; }
         .menu-card-body { padding: 25px; }
-        .menu-card-body h3 { font-family: 'Inter', sans-serif; text-transform: uppercase; font-size: 1.4rem; }
+        .menu-card-body h3 { font-family: 'Inter', sans-serif; text-transform: uppercase; font-size: 1.4rem; font-weight: 900; }
         .price { color: var(--red); float: right; }
+
+        footer { padding: 80px 5%; background: var(--dark); color: white; text-align: center; }
+        .footer-logo { height: 80px; margin-bottom: 20px; }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .marathon-text { font-size: 4rem; }
         }
-
-        footer { padding: 80px 5%; background: var(--dark); color: white; text-align: center; }
-        .footer-logo { height: 80px; margin-bottom: 20px; filter: brightness(100%); }
     </style>
 </head>
 <body>
@@ -80,7 +87,7 @@
         <img src="IMG_8690.jpeg" alt="Divine Burger Logo" class="logo">
         <div class="nav-links">
             <a href="#menu">Menu</a>
-            <a href="https://wa.me/251965966465" class="order-cta">Order Online</a>
+            <a href="https://wa.me/251965966465" class="order-cta">Order Now</a>
         </div>
     </nav>
 
@@ -90,7 +97,7 @@
         </video>
         <div>
             <h1 class="marathon-text">DIVINE<br>BURGER</h1>
-            <p>The Marathon Continues</p>
+            <p>Premium Gourmet Burgers in the heart of Bole</p>
         </div>
     </header>
 
@@ -99,29 +106,29 @@
             <img src="IMG_8683.jpeg" alt="Divine Junkie">
             <div class="menu-card-body">
                 <h3>Divine Junkie <span class="price">570 ETB</span></h3>
-                <p>Triple beef, egg, and house sauce.</p>
+                <p>Triple beef, egg, and signature house sauce.</p>
             </div>
         </article>
         <article class="menu-card">
             <img src="IMG_8686.jpeg" alt="Triple Stuffed">
             <div class="menu-card-body">
                 <h3>Triple Stuffed <span class="price">630 ETB</span></h3>
-                <p>Maximum protein for the marathon.</p>
+                <p>The ultimate protein experience for the marathon.</p>
             </div>
         </article>
         <article class="menu-card">
             <img src="IMG_8685.jpeg" alt="Milkshakes">
             <div class="menu-card-body">
-                <h3>Gourmet Shakes <span class="price">Cool Down</span></h3>
-                <p>Premium creamy blends.</p>
+                <h3>Gourmet Shakes <span class="price">Sweet Fix</span></h3>
+                <p>Premium creamy blends for the perfect finish.</p>
             </div>
         </article>
     </section>
 
     <footer>
         <img src="IMG_8690.jpeg" alt="Divine Burger" class="footer-logo">
-        <p>Bole behind Shulding, Addis Ababa</p>
-        <p style="margin-top: 20px; opacity: 0.5; font-size: 12px;">© 2026 DIVINE BURGER. ALL RIGHTS RESERVED.</p>
+        <p>Behind Shulding, Bole, Addis Ababa</p>
+        <p style="margin-top: 20px; opacity: 0.5; font-size: 11px; letter-spacing: 1px;">© 2026 DIVINE BURGER. ALL RIGHTS RESERVED.</p>
     </footer>
 
 </body>
