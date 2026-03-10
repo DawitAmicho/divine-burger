@@ -3,174 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Divine Burger - Experience the best gourmet burgers at Bole behind Shulding. Fresh ingredients, signature sauce, and divine taste.">
-    <title>Divine Burger | Premium Gourmet Burgers</title>
+    <meta name="description" content="Divine Burger Bole - Best gourmet burgers in Addis Ababa. Try our Triple Stuffed or Crispy Chicken. Located behind Shulding. Order: 0965966465.">
+    <title>Divine Burger | Gourmet Burger House | Bole, Addis Ababa</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --gold: #d4af37;
             --red: #e63946;
-            --charcoal: #1a1a1a;
-            --white: #ffffff;
+            --gold: #d4af37;
+            --dark: #121212;
+            --light: #fdfdfd;
         }
 
-        body { font-family: 'Montserrat', sans-serif; margin: 0; background: var(--white); overflow-x: hidden; }
-        h1, h2, h3 { font-family: 'Bebas Neue', cursive; letter-spacing: 2px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Montserrat', sans-serif; color: var(--dark); background: var(--light); line-height: 1.6; }
 
         /* Navigation */
-        header {
-            background: rgba(26, 26, 26, 0.95);
-            padding: 0.5rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 2px solid var(--red);
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 5%; background: white; position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .logo { height: 60px; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 700; margin-left: 20px; font-size: 14px; text-transform: uppercase; }
+        .order-cta { background: var(--red); color: white !important; padding: 10px 20px; border-radius: 50px; }
+
+        /* Hero Section */
+        .hero {
+            position: relative; height: 80vh; display: flex; align-items: center; 
+            justify-content: center; overflow: hidden; color: white; text-align: center;
+        }
+        .hero-video {
+            position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%;
+            transform: translate(-50%, -50%); z-index: -1; object-fit: cover; filter: brightness(40%);
+        }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 900; letter-spacing: -2px; }
+        .hero p { font-size: 1.2rem; margin: 20px 0; }
+
+        /* Feature Section (Menu Preview) */
+        .section-title { text-align: center; padding: 60px 5% 20px; font-size: 2.5rem; font-weight: 900; }
+        
+        .menu-preview {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px; padding: 20px 5% 60px;
+        }
+        .menu-card {
+            background: white; border-radius: 20px; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s;
+        }
+        .menu-card:hover { transform: translateY(-10px); }
+        .menu-card img { width: 100%; height: 250px; object-fit: cover; }
+        .menu-card-body { padding: 20px; }
+        .menu-card-body h3 { font-size: 1.5rem; margin-bottom: 10px; display: flex; justify-content: space-between; }
+        .price { color: var(--red); font-weight: 900; }
+
+        /* Ambience Section */
+        .ambience {
+            background: var(--dark); color: white; padding: 80px 5%;
+            display: flex; align-items: center; flex-wrap: wrap; gap: 40px;
+        }
+        .ambience-text { flex: 1; min-width: 300px; }
+        .ambience-img { flex: 1; min-width: 300px; border-radius: 20px; }
+
+        /* The Digital Menu (SEO Rich) */
+        .full-menu { background: #f4f4f4; padding: 60px 5%; }
+        .menu-list { 
+            max-width: 800px; margin: 0 auto; display: grid; 
+            grid-template-columns: 1fr 1fr; gap: 40px; 
+        }
+        .item { border-bottom: 1px dashed #ccc; padding-bottom: 10px; }
+        .item h4 { display: flex; justify-content: space-between; }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .menu-list { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .hero h1 { line-height: 1.1; }
         }
 
-        .logo-img { height: 60px; width: auto; }
-
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover { color: var(--gold); }
-
-        /* Hero Video Section */
-        .hero-container {
-            position: relative;
-            height: 85vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        #bg-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -1;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-            filter: brightness(40%);
-        }
-
-        .hero-content h1 { font-size: 5rem; margin: 0; color: var(--gold); text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
-        .hero-content p { font-size: 1.4rem; margin-bottom: 2rem; }
-
-        .btn {
-            background: var(--red);
-            color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            text-transform: uppercase;
-            transition: transform 0.2s;
-            display: inline-block;
-        }
-        .btn:hover { transform: scale(1.05); background: #c52b36; }
-
-        /* Info Section */
-        .info-bar {
-            background: var(--charcoal);
-            color: var(--white);
-            padding: 40px 5%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            text-align: center;
-            gap: 20px;
-        }
-
-        .info-card h3 { color: var(--gold); margin-bottom: 5px; }
-
-        /* Menu Section */
-        .menu-section { padding: 80px 5%; text-align: center; }
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-        .menu-item { border: 1px solid #eee; padding: 20px; border-radius: 15px; transition: box-shadow 0.3s; }
-        .menu-item:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .menu-item img { width: 100%; border-radius: 10px; }
-
-        footer { background: #111; color: #777; padding: 40px; text-align: center; border-top: 1px solid #333; }
+        footer { background: white; padding: 60px 5%; text-align: center; border-top: 5px solid var(--red); }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="copy_6D3EC1E0-9E8D-4845-B40C-90C8C35FBAC8.jpg" alt="Divine Burger Logo" class="logo-img">
-        <nav class="nav-links">
+    <nav>
+        <img src="copy_6D3EC1E0-9E8D-4845-B40C-90C8C35FBAC8.jpg" alt="Divine Burger Logo" class="logo">
+        <div class="nav-links">
             <a href="#menu">Menu</a>
-            <a href="#location">Location</a>
-            <a href="tel:0965966465">Call Now</a>
-        </nav>
-    </header>
+            <a href="#location">Find Us</a>
+            <a href="https://wa.me/251965966465" class="order-cta">Order Now</a>
+        </div>
+    </nav>
 
-    <section class="hero-container">
-        <video autoplay muted loop playsinline id="bg-video">
+    <header class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
             <source src="8589168718550946723.mp4" type="video/mp4">
         </video>
-        <div class="hero-content">
-            <h1>DIVINE BURGER</h1>
-            <p>Bole's Premium Gourmet Burger Experience</p>
-            <a href="#menu" class="btn">Explore Menu</a>
+        <div>
+            <h1>TAKE YOUR TASTE <br> BUDS TO HEAVEN</h1>
+            <p>Premium Gourmet Burgers in the heart of Bole</p>
+            <a href="#menu" class="order-cta" style="padding: 15px 40px; font-size: 1.2rem;">View Menu</a>
         </div>
+    </header>
+
+    <h2 class="section-title">Fan Favorites</h2>
+    <section class="menu-preview">
+        <article class="menu-card">
+            <img src="IMG_8683.jpeg" alt="Divine Junkie Burger">
+            <div class="menu-card-body">
+                <h3>Divine Junkie <span class="price">570 ETB</span></h3>
+                <p>Double patty, double cheese, fried eggs, and house sauce.</p>
+            </div>
+        </article>
+        <article class="menu-card">
+            <img src="IMG_8686.jpeg" alt="Triple Stuffed Burger">
+            <div class="menu-card-body">
+                <h3>Triple Stuffed <span class="price">630 ETB</span></h3>
+                <p>Triple patty, triple cheese, and sliced beef.</p>
+            </div>
+        </article>
+        <article class="menu-card">
+            <img src="IMG_8685.jpeg" alt="Divine Milkshakes">
+            <div class="menu-card-body">
+                <h3>Signature Shakes <span class="price">Gourmet</span></h3>
+                <p>The perfect creamy companion to your divine meal.</p>
+            </div>
+        </article>
     </section>
 
-    <div class="info-bar">
-        <div class="info-card">
-            <h3>📍 Location</h3>
-            <p>Bole behind Shulding</p>
+    <section class="ambience">
+        <div class="ambience-text">
+            <h2>Experience the Vibe</h2>
+            <p style="margin: 20px 0;">Our Bole branch offers a modern, cozy atmosphere perfect for family dinners or a quick gourmet lunch behind Shulding.</p>
+            <a href="https://wa.me/251965966465" style="color: var(--gold); font-weight: 700; text-decoration: none;">CALL FOR RESERVATIONS →</a>
         </div>
-        <div class="info-card">
-            <h3>📞 Order</h3>
-            <p>0965-966-465</p>
-        </div>
-        <div class="info-card">
-            <h3>📸 Instagram</h3>
-            <p>@divineburger_</p>
-        </div>
-    </div>
+        <img src="IMG_8688.jpg" class="ambience-img" alt="Divine Burger Interior Bole">
+    </section>
 
-    <section id="menu" class="menu-section">
-        <h2>Our Divine Menu</h2>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80" alt="Burger">
-                <h3>The Divine Classic</h3>
-                <p>Signature beef patty with secret sauce.</p>
+    <section id="menu" class="full-menu">
+        <h2 class="section-title">The Divine Menu</h2>
+        <div class="menu-list">
+            <div class="item">
+                <h4>Cheesy Burger <span>450 ETB</span></h4>
+                <p>House sauce, lettuce, tomato, pickles.</p>
             </div>
-            <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=500&q=80" alt="Burger">
-                <h3>The Bole Special</h3>
-                <p>Double cheese, caramelized onions, and spice.</p>
+            <div class="item">
+                <h4>California Style <span>490 ETB</span></h4>
+                <p>Fried eggs, house sauce, pickles.</p>
+            </div>
+            <div class="item">
+                <h4>American Cheesy Melt <span>545 ETB</span></h4>
+                <p>Sliced cheese, American cheese, lettuce.</p>
+            </div>
+            <div class="item">
+                <h4>Crispy Chicken Burger <span>720 ETB</span></h4>
+                <p>Two layers of marinated chicken breast.</p>
             </div>
         </div>
     </section>
 
     <footer id="location">
-        <img src="copy_6D3EC1E0-9E8D-4845-B40C-90C8C35FBAC8.jpg" alt="Divine Burger" style="height: 50px; filter: grayscale(1); margin-bottom: 20px;">
-        <p>Bole behind Shulding, Addis Ababa</p>
-        <p>&copy; 2026 Divine Burger. Locally Crafted Excellence.</p>
+        <img src="copy_6D3EC1E0-9E8D-4845-B40C-90C8C35FBAC8.jpg" alt="Divine Burger" style="height: 80px; margin-bottom: 20px;">
+        <h2>DIVINE BURGER BOLE</h2>
+        <p>Behind Shulding, Addis Ababa</p>
+        <p><strong>Phone:</strong> 0965-966-465</p>
+        <p style="margin-top: 30px; font-size: 12px; color: #999;">&copy; 2026 Divine Burger. Prices include 15% VAT.</p>
     </footer>
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Divine Burger",
+      "image": ["IMG_8683.jpeg", "IMG_8686.jpeg"],
+      "priceRange": "$$",
+      "servesCuisine": "Gourmet Burgers",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bole behind Shulding",
+        "addressLocality": "Addis Ababa",
+        "addressCountry": "ET"
+      },
+      "telephone": "+251965966465"
+    }
+    </script>
 </body>
 </html>
