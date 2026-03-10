@@ -295,6 +295,43 @@
         <p>Bole, Behind Sheger Building</p>
         <p style="margin-top: 40px; opacity: 0.4; font-size: 10px; letter-spacing: 2px;">© 2026 DIVINE BURGER. TAKE YOUR TASTE BUDS TO HEAVEN</p>
     </footer>
+    <div class="mobile-action-bar" style="display: none; position: fixed; bottom: 0; left: 0; width: 100%; background: white; padding: 12px 5%; box-shadow: 0 -4px 15px rgba(0,0,0,0.1); z-index: 9999; justify-content: space-between; gap: 15px;">
+    <a href="tel:0965966465" style="flex: 1; background: #000; color: white; text-align: center; padding: 14px; text-decoration: none; font-weight: 800; font-size: 12px; text-transform: uppercase; border-radius: 4px;">Call Now</a>
+    <a href="https://wa.me/251965966465" style="flex: 1; background: var(--red); color: white; text-align: center; padding: 14px; text-decoration: none; font-weight: 800; font-size: 12px; text-transform: uppercase; border-radius: 4px;">WhatsApp</a>
+</div>
+
+<style>
+    /* Only show the action bar on mobile */
+   /* --- IMPROVED MOBILE HEADER --- */
+@media (max-width: 768px) {
+    /* Hide the gray utility bar to save space */
+    .utility-bar { 
+        display: none; 
+    }
+
+    /* Adjust Nav for Mobile */
+    nav {
+        padding: 15px 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo { 
+        height: 50px; /* Smaller logo so it doesn't crowd */
+    }
+
+    /* Hide standard links, they take up too much room */
+    .nav-links {
+        display: none;
+    }
+
+    /* Add a mobile-only call button via CSS or keep it simple */
+    .hero-text h1 {
+        font-size: 3.5rem;
+    }
+}
+</style>
 
 </body>
 </html>
