@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Divine Burger - Premium Gourmet Burgers in Bole, behind Sheger Building. Try the Divine Junkie & Triple Stuffed. Call 0965966465.">
+    <meta name="description" content="Divine Burger - Premium Gourmet Burgers in Bole, behind Sheger Building. Call 0965966465.">
     <title>Divine Burger | Premium Gourmet Burgers | Bole, Addis Ababa</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -19,19 +19,82 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Montserrat', sans-serif; background: var(--light); color: var(--dark); line-height: 1.6; }
 
-        /* Navigation */
-        nav {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 15px 5%; background: white; position: sticky; top: 0; z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        /* --- NEW HEADER STRUCTURE --- */
+        
+        /* 1. Top Utility Bar (Fills Space) */
+        .utility-bar {
+            background: #f1f1f1;
+            padding: 8px 5%;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #ddd;
         }
-        .logo { height: 60px; width: auto; }
-        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 700; margin-left: 20px; font-size: 13px; text-transform: uppercase; }
-        .order-cta { background: var(--red); color: white !important; padding: 10px 20px; border-radius: 4px; }
+        .utility-bar a { text-decoration: none; color: #666; transition: 0.3s; }
+        .utility-bar a:hover { color: var(--red); }
+
+        /* 2. Main Navigation */
+        header {
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        nav {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            padding: 10px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo-box { display: flex; align-items: center; gap: 15px; }
+        .logo { height: 75px; width: auto; }
+        
+        .nav-links { display: flex; align-items: center; gap: 30px; }
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--dark); 
+            font-weight: 800; 
+            font-size: 13px; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; width: 0; height: 2px;
+            bottom: -5px; left: 0; background: var(--red); transition: 0.3s;
+        }
+        .nav-links a:hover::after { width: 100%; }
+
+        /* 3. Announcement Ticker (Adds Energy) */
+        .ticker {
+            background: var(--red);
+            color: white;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 5px 0;
+            font-size: 10px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .ticker-wrap { display: inline-block; animation: ticker 30s linear infinite; }
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
 
         /* Hero */
         .hero {
-            position: relative; height: 85vh; display: flex; align-items: center; 
+            position: relative; height: 80vh; display: flex; align-items: center; 
             justify-content: center; overflow: hidden; color: white; text-align: center;
         }
         .hero-video {
@@ -45,23 +108,13 @@
         }
         .hero p { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-top: 15px; }
 
-        /* SEO Contact Bar */
-        .info-bar {
-            background: var(--dark); color: white; padding: 30px 5%;
-            display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; gap: 30px;
-        }
-        .info-item h4 { color: var(--red); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px; }
-        .info-item p, .info-item a { color: white; text-decoration: none; font-weight: 700; font-size: 1rem; }
-        .info-item a:hover { color: var(--red); }
-
         /* Menu */
         .section-title { text-align: center; padding: 80px 5% 20px; font-size: 2.5rem; font-weight: 900; text-transform: uppercase; }
         .menu-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px; padding: 20px 5% 80px;
         }
-        .menu-card { background: white; border: 1px solid #eee; overflow: hidden; transition: transform 0.3s; }
-        .menu-card:hover { transform: translateY(-5px); }
+        .menu-card { background: white; border: 1px solid #eee; overflow: hidden; transition: 0.3s; }
         .menu-card img { width: 100%; height: 320px; object-fit: cover; }
         .menu-card-body { padding: 25px; }
         .menu-card-body h3 { font-family: 'Inter', sans-serif; text-transform: uppercase; font-size: 1.4rem; font-weight: 900; }
@@ -71,24 +124,41 @@
         .footer-logo { height: 90px; margin-bottom: 25px; }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .info-bar { flex-direction: column; padding: 40px 5%; }
+            .nav-links, .utility-bar { display: none; }
             .marathon-text { font-size: 4.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <img src="IMG_8690.jpeg" alt="Divine Burger Logo" class="logo">
-        <div class="nav-links">
-            <a href="#menu">Menu</a>
-            <a href="tel:0965966465">Call Us</a>
-            <a href="https://wa.me/251965966465" class="order-cta">Order Now</a>
+    <header>
+        <div class="utility-bar">
+            <a href="https://instagram.com/divineburger_" target="_blank">Instagram</a>
+            <a href="tel:0965966465">Support: 0965 96 64 65</a>
+            <span>📍 Bole, Behind Sheger Building</span>
         </div>
-    </nav>
 
-    <header class="hero">
+        <nav>
+            <div class="logo-box">
+                <img src="IMG_8690.jpeg" alt="Divine Burger Logo" class="logo">
+            </div>
+            
+            <div class="nav-links">
+                <a href="#menu">The Menu</a>
+                <a href="#about">Our Story</a>
+                <a href="#location">Find Us</a>
+                <a href="https://wa.me/251965966465" style="background: var(--red); color: white; padding: 10px 20px; border-radius: 4px;">Order Pickup</a>
+            </div>
+        </nav>
+
+        <div class="ticker">
+            <div class="ticker-wrap">
+                DIVINE BURGER BOLE • NOW SERVING THE TRIPLE STUFFED • GOURMET EXPERIENCE • BEHIND SHEGER BUILDING • DIVINE BURGER BOLE • NOW SERVING THE TRIPLE STUFFED • GOURMET EXPERIENCE • BEHIND SHEGER BUILDING
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
         <video autoplay muted loop playsinline class="hero-video">
             <source src="8589168718550946723.mp4" type="video/mp4">
         </video>
@@ -96,42 +166,27 @@
             <h1 class="marathon-text">DIVINE<br>BURGER</h1>
             <p>Premium Gourmet Burgers in the heart of Bole</p>
         </div>
-    </header>
-
-    <section class="info-bar">
-        <div class="info-item">
-            <h4>📍 Location</h4>
-            <p>Bole, Behind Sheger Building</p>
-        </div>
-        <div class="info-item">
-            <h4>☎️ Order Line</h4>
-            <a href="tel:0965966465">0965 96 64 65</a>
-        </div>
-        <div class="info-item">
-            <h4>📸 Instagram</h4>
-            <a href="https://instagram.com/divineburger_" target="_blank">@divineburger_</a>
-        </div>
     </section>
 
     <section id="menu">
         <h2 class="section-title">The Lineup</h2>
         <div class="menu-grid">
             <article class="menu-card">
-                <img src="IMG_8683.jpeg" alt="Divine Junkie Burger - Gourmet Burger Bole">
+                <img src="IMG_8683.jpeg" alt="Divine Junkie Burger">
                 <div class="menu-card-body">
                     <h3>Divine Junkie <span class="price">570 ETB</span></h3>
                     <p>Double patty, double cheese, fried eggs, and signature house sauce.</p>
                 </div>
             </article>
             <article class="menu-card">
-                <img src="IMG_8686.jpeg" alt="Triple Stuffed Burger - Best Burger Addis Ababa">
+                <img src="IMG_8686.jpeg" alt="Triple Stuffed Burger">
                 <div class="menu-card-body">
                     <h3>Triple Stuffed <span class="price">630 ETB</span></h3>
                     <p>Triple patty, triple cheese, and premium sliced beef strips.</p>
                 </div>
             </article>
             <article class="menu-card">
-                <img src="IMG_8685.jpeg" alt="Divine Burger Signature Milkshakes">
+                <img src="IMG_8685.jpeg" alt="Divine Burger Milkshakes">
                 <div class="menu-card-body">
                     <h3>Gourmet Shakes <span class="price">Cool Down</span></h3>
                     <p>Premium creamy blends designed for the ultimate burger companion.</p>
@@ -142,33 +197,10 @@
 
     <footer>
         <img src="IMG_8690.jpeg" alt="Divine Burger Official Logo" class="footer-logo">
-        <p style="font-weight: 700; letter-spacing: 1px;">DIVINE BURGER ADDIS ABABA</p>
+        <p style="font-weight: 700;">DIVINE BURGER ADDIS ABABA</p>
         <p>Bole, Behind Sheger Building</p>
-        <div style="margin-top: 30px;">
-            <a href="https://instagram.com/divineburger_" style="margin: 0 15px; color: var(--dark); font-weight: 700; text-decoration: none;">Instagram</a>
-            <a href="tel:0965966465" style="margin: 0 15px; color: var(--dark); font-weight: 700; text-decoration: none;">Phone</a>
-        </div>
         <p style="margin-top: 40px; opacity: 0.4; font-size: 10px; letter-spacing: 2px;">© 2026 DIVINE BURGER. THE MARATHON CONTINUES.</p>
     </footer>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Restaurant",
-      "name": "Divine Burger",
-      "image": "IMG_8690.jpeg",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Bole, Behind Sheger Building",
-        "addressLocality": "Addis Ababa",
-        "addressCountry": "ET"
-      },
-      "telephone": "+251965966465",
-      "url": "https://divineburger.netlify.app",
-      "menu": "https://divineburger.netlify.app#menu",
-      "servesCuisine": "Gourmet Burgers",
-      "priceRange": "ETB"
-    }
-    </script>
 </body>
 </html>
