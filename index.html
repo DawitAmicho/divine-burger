@@ -3,40 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Divine Burger serves the best premium gourmet burgers in Bole, Addis Ababa. Located behind Sheger Building. Fresh beef, house sauces, and fast takeaway.">
-    <meta name="keywords" content="Best Burger Addis Ababa, Burger Bole, Divine Burger, Gourmet Burger Ethiopia, Sheger Building Restaurant, Burger Delivery Addis">
-    <title>Divine Burger | Best Gourmet Burgers in Bole, Addis Ababa</title>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Restaurant",
-      "name": "Divine Burger",
-      "image": "https://divineburger.netlify.app/IMG_8690.jpeg",
-      "url": "https://divineburger.netlify.app",
-      "telephone": "+251965966465",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Behind Sheger Building, Bole",
-        "addressLocality": "Addis Ababa",
-        "addressCountry": "ET"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 8.9945, 
-        "longitude": 38.7850
-      },
-      "servesCuisine": "Gourmet Burgers",
-      "priceRange": "ETB 450 - ETB 750",
-      "openingHours": "Mo-Su 10:00-22:00"
-    }
-    </script>
-    
+    <meta name="description" content="Divine Burger - Premium Gourmet Burgers in Bole, behind Sheger Building. Call 0965966465.">
+    <title>Divine Burger | Premium Gourmet Burgers | Bole, Addis Ababa</title>
     <link rel="icon" type="image/jpeg" href="IMG_8690.jpeg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Keep your existing styles here */
-        .map-container { width: 100%; height: 400px; filter: grayscale(100%) invert(90%); } /* Stylized map to fit your black/white theme */
+        :root {
+            --red: #e63946;
+            --dark: #000000;
+            --light: #ffffff;
+            --gray: #f9f9f9;
+        }
+
+        /* Added Smooth Scroll */
+        html { scroll-behavior: smooth; }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Montserrat', sans-serif; background: var(--light); color: var(--dark); line-height: 1.6; }
+
+        /* Navigation & Header */
+        .utility-bar {
+            background: #f1f1f1;
+            padding: 8px 5%;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #ddd;
+        }
+        .utility-bar a { text-decoration: none; color: #666; transition: 0.3s; }
+        .utility-bar a:hover { color: var(--red); }
+
+        header {
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        nav {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            padding: 10px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo { height: 75px; width: auto; }
+        
+        .nav-links { display: flex; align-items: center; gap: 30px; }
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--dark); 
+            font-weight: 800; 
+            font-size: 13px; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; width: 0; height: 2px;
+            bottom: -5px; left: 0; background: var(--red); transition: 0.3s;
+        }
+        .nav-links a:hover::after { width: 100%; }
+
+        .ticker {
+            background: var(--red);
+            color: white;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 5px 0;
+            font-size: 10px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .ticker-wrap { display: inline-block; animation: ticker 30s linear infinite; }
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative; height: 80vh; display: flex; align-items: center; 
+            justify-content: center; overflow: hidden; color: white; text-align: center;
+        }
+        .hero-video {
+            position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%;
+            transform: translate(-50%, -50%); z-index: -1; object-fit: cover; filter: brightness(30%);
+        }
+        .marathon-text { 
+            font-family: 'Inter', sans-serif; font-weight: 900;
+            font-size: clamp(3.5rem, 12vw, 9rem); letter-spacing: -0.05em; 
+            line-height: 0.85; text-transform: uppercase; color: var(--red);
+        }
+        .hero p { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-top: 15px; }
+
+        /* Menu Section */
+        .section-title { text-align: center; padding: 80px 5% 20px; font-size: 2.5rem; font-weight: 900; text-transform: uppercase; }
+        .menu-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px; padding: 20px 5% 80px;
+        }
+        .menu-card { background: white; border: 1px solid #eee; overflow: hidden; transition: 0.3s; }
+        .menu-card img { width: 100%; height: 320px; object-fit: cover; }
+        .menu-card-body { padding: 25px; }
+        .menu-card-body h3 { font-family: 'Inter', sans-serif; text-transform: uppercase; font-size: 1.4rem; font-weight: 900; }
+        .price { color: var(--red); float: right; }
+
+        footer { padding: 80px 5%; background: var(--gray); text-align: center; border-top: 5px solid var(--red); }
+        .footer-logo { height: 90px; margin-bottom: 25px; }
+
+        @media (max-width: 768px) {
+            .nav-links, .utility-bar { display: none; }
+            .marathon-text { font-size: 4.5rem; }
+            .logo { height: 55px; } /* Smaller logo for mobile */
+        }
     </style>
 </head>
 <body>
