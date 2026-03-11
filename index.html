@@ -3,98 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Best Burger in Addis Ababa | Divine Burger Bole | Gourmet Experience</title>
-    <meta name="description" content="Divine Burger serves the best gourmet burgers in Addis Ababa. 100% Angus beef, fresh daily prep. Located in Bole, behind Sheger Building.">
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Restaurant",
-      "name": "Divine Burger",
-      "image": "https://divineburger.netlify.app/IMG_8690.jpeg",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Behind Sheger Building, Bole",
-        "addressLocality": "Addis Ababa",
-        "addressCountry": "ET"
-      },
-      "servesCuisine": "Gourmet Burgers",
-      "priceRange": "ETB 450 - ETB 750",
-      "telephone": "+251965966465"
-    }
-    </script>
-
-    <link rel="icon" type="image/jpeg" href="IMG_8690.jpeg">
+    <title>Divine Burger | Gourmet Burger Excellence in Addis Ababa</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
     
     <style>
-        :root { --red: #e63946; --dark: #000000; --light: #ffffff; }
+        :root { --red: #ff3e3e; --dark: #0a0a0a; --glass: rgba(255, 255, 255, 0.03); }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Montserrat', sans-serif; background: var(--light); color: var(--dark); overflow-x: hidden; }
+        body { font-family: 'Montserrat', sans-serif; background: var(--dark); color: white; overflow-x: hidden; }
 
-        /* DESKTOP NAV */
-        header { background: white; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; max-width: 1400px; margin: 0 auto; }
-        .logo { height: 65px; width: auto; }
-        .nav-links { display: flex; gap: 30px; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 800; font-size: 13px; text-transform: uppercase; }
-        .order-btn { background: var(--red); color: white !important; padding: 10px 20px; border-radius: 4px; }
+        /* HEADER - Transparent Glass */
+        header { 
+            position: fixed; width: 100%; top: 0; z-index: 1000; 
+            backdrop-filter: blur(10px); background: rgba(0,0,0,0.7);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; }
+        .logo { height: 55px; filter: brightness(1.2); }
 
-        /* TICKER */
-        .ticker { background: var(--dark); color: white; padding: 10px 0; overflow: hidden; white-space: nowrap; font-size: 12px; font-weight: 900; }
-        .ticker-content { display: inline-block; animation: scroll 35s linear infinite; }
+        /* THE TICKER - Now with a "Glowing" effect */
+        .ticker { background: var(--red); color: white; padding: 8px 0; font-weight: 900; text-transform: uppercase; font-size: 11px; box-shadow: 0 0 20px rgba(255, 62, 62, 0.4); }
+        .ticker-wrap { display: flex; animation: scroll 30s linear infinite; }
         @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-        /* HERO & VIDEO OPTIMIZATION */
-        .hero { position: relative; height: 85vh; display: flex; align-items: center; justify-content: center; color: white; text-align: center; }
-        .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; filter: brightness(40%); }
-        .hero-content h1 { font-family: 'Inter'; font-size: clamp(3.5rem, 12vw, 10rem); line-height: 0.8; color: var(--red); }
+        /* HERO - Industrial Luxury */
+        .hero { 
+            height: 100vh; position: relative; display: flex; align-items: center; justify-content: center;
+            background: radial-gradient(circle, rgba(20,20,20,0) 0%, rgba(10,10,10,1) 100%);
+        }
+        .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; opacity: 0.6; }
+        .hero-content { text-align: center; }
+        .hero-content h1 { 
+            font-family: 'Inter'; font-size: clamp(4rem, 15vw, 12rem); line-height: 0.8; 
+            background: linear-gradient(to bottom, #fff 40%, #555 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
 
-        /* MENU GRID (Desktop) */
-        .highlights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 0 5% 80px; max-width: 1400px; margin: 0 auto; }
-        .card { background: #000; color: #fff; overflow: hidden; }
-        .card img { width: 100%; height: 400px; object-fit: cover; }
-        
-        .full-menu { background: #111; color: white; padding: 100px 5%; }
-        .menu-columns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px; max-width: 1200px; margin: 0 auto; }
-        .menu-cat h3 { color: var(--red); margin-bottom: 25px; font-size: 14px; border-bottom: 2px solid var(--red); display: inline-block; font-weight: 900; }
-        .menu-item { display: flex; justify-content: space-between; font-weight: 800; margin-bottom: 15px; border-bottom: 1px solid #222; padding-bottom: 8px; }
+        /* SECTION HEADERS - The "It" Factor Detail */
+        .section-header { position: relative; padding: 100px 5% 50px; text-align: center; }
+        .outline-text { 
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            font-family: 'Inter'; font-size: 10vw; color: transparent; 
+            -webkit-text-stroke: 1px rgba(255,255,255,0.05); z-index: -1; white-space: nowrap;
+        }
 
-        /* MOBILE OVERRIDES */
+        /* HIGHLIGHT CARDS - Glassmorphism */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 0 5% 100px; max-width: 1400px; margin: 0 auto; }
+        .card { 
+            background: var(--glass); border: 1px solid rgba(255,255,255,0.1); 
+            border-radius: 20px; overflow: hidden; transition: 0.5s; 
+            backdrop-filter: blur(5px);
+        }
+        .card:hover { transform: translateY(-15px); border-color: var(--red); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .card img { width: 100%; height: 350px; object-fit: cover; filter: grayscale(20%); transition: 0.5s; }
+        .card:hover img { filter: grayscale(0%); }
+
+        /* THE MENU - Sleek Typography */
+        .menu-section { background: #050505; padding: 100px 5%; border-top: 1px solid rgba(255,255,255,0.05); }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; max-width: 1200px; margin: 0 auto; }
+        .cat-title { color: var(--red); font-weight: 900; letter-spacing: 3px; margin-bottom: 30px; font-size: 14px; text-transform: uppercase; }
+        .item { display: flex; justify-content: space-between; margin-bottom: 20px; font-weight: 700; font-size: 1.1rem; border-bottom: 1px dotted rgba(255,255,255,0.2); padding-bottom: 10px; }
+
+        /* MOBILE FIXES */
         @media (max-width: 768px) {
-            nav { justify-content: center; }
-            .nav-links { display: none; }
-            .hero { height: 60vh; }
-            .hero-content h1 { font-size: 4rem; }
-            .highlights-grid { grid-template-columns: 1fr; padding: 0 15px; }
-            .menu-columns { grid-template-columns: 1fr; gap: 30px; }
+            .hero { height: 70vh; }
+            .hero-content h1 { font-size: 5rem; }
+            .outline-text { font-size: 20vw; }
             .mobile-cta { display: flex !important; }
-            footer { padding-bottom: 120px; }
         }
 
         .mobile-cta { 
-            position: fixed; bottom: 0; width: 100%; background: white; 
-            display: none; justify-content: space-around; padding: 15px; 
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.1); z-index: 9999;
+            position: fixed; bottom: 20px; left: 5%; width: 90%; 
+            background: rgba(0,0,0,0.8); backdrop-filter: blur(10px);
+            display: none; border: 1px solid rgba(255,255,255,0.1); border-radius: 50px; padding: 10px; z-index: 9999;
         }
-        .mobile-cta a { flex: 1; text-align: center; text-decoration: none; font-weight: 900; padding: 16px; border-radius: 4px; font-size: 12px; }
+        .mobile-cta a { flex: 1; text-align: center; color: white; text-decoration: none; font-weight: 900; font-size: 12px; padding: 15px; border-radius: 50px; }
     </style>
 </head>
-
 <body>
+
     <header>
         <nav>
-            <img src="IMG_8690.jpeg" alt="Divine Burger Logo" class="logo">
-            <div class="nav-links">
-                <a href="#menu">The Menu</a>
-                <a href="#about">Our Story</a>
-                <a href="https://wa.me/251965966465" class="order-btn">Order Pickup</a>
+            <img src="IMG_8690.jpeg" alt="Divine" class="logo">
+            <div style="display:flex; gap:20px;">
+                <a href="https://wa.me/251965966465" style="background:var(--red); color:white; padding:12px 25px; border-radius:50px; text-decoration:none; font-weight:900; font-size:12px;">ORDER NOW</a>
             </div>
         </nav>
         <div class="ticker">
-            <div class="ticker-content">BEST BURGER IN ADDIS ABABA • GOURMET EXPERIENCE • BOLE • BEHIND SHEGER BUILDING • </div>
+            <div class="ticker-wrap">
+                &nbsp; THE BEST BURGER IN ADDIS ABABA • GOURMET BOLE EXPERIENCE • OPEN DAILY • BEHIND SHEGER BUILDING • THE BEST BURGER IN ADDIS ABABA • 
+            </div>
         </div>
     </header>
 
@@ -103,68 +100,62 @@
             <source src="8589168718550946723.mp4" type="video/mp4">
         </video>
         <div class="hero-content">
-            <h1>DIVINE<br>BURGER</h1>
-            <p style="text-transform:uppercase; font-weight:800; letter-spacing:3px;">The Best Burger in Addis Ababa</p>
+            <p style="letter-spacing: 10px; font-size: 12px; margin-bottom: 10px; opacity: 0.7;">EST. ADDIS ABABA</p>
+            <h1>DIVINE</h1>
+            <p style="letter-spacing: 5px; font-size: 14px; color: var(--red); font-weight: 900;">GOURMET STANDARD</p>
         </div>
     </section>
 
-    <section id="about" style="padding: 80px 5%; text-align: center; max-width: 1000px; margin: 0 auto;">
-        <h2 style="font-family:'Inter'; font-size: 2.5rem; text-transform: uppercase; margin-bottom: 20px;">A <span style="color:var(--red)">Gourmet</span> Standard in Bole</h2>
-        <p style="font-size: 1.1rem; line-height: 1.8;">Experience the <strong>best burger in Addis Ababa</strong>. We use 100% premium beef and fresh local ingredients to craft a truly <strong>gourmet</strong> experience. Visit us in <strong>Bole, behind Sheger Building</strong>.</p>
+    <section class="section-header">
+        <div class="outline-text">FAVORITES</div>
+        <h2 style="font-family:'Inter'; font-size: 3rem;">THE SELECTION</h2>
     </section>
 
-    <section id="menu">
-        <div class="highlights-grid">
-            <div class="card">
-                <img src="IMG_8683.jpeg" alt="Best Burger Addis - Divine Junkie">
-                <div style="padding:20px;"><h3>Divine Junkie <span style="float:right; color:var(--red);">570 ETB</span></h3></div>
-            </div>
-            <div class="card">
-                <img src="IMG_8686.jpeg" alt="Gourmet Burger Bole - Triple Stuffed">
-                <div style="padding:20px;"><h3>Triple Stuffed <span style="float:right; color:var(--red);">630 ETB</span></h3></div>
-            </div>
-            <div class="card">
-                <img src="IMG_8685.jpeg" alt="Gourmet Dining Addis Ababa">
-                <div style="padding:20px;"><h3>Divine Shakes <span style="float:right; color:var(--red);">Premium</span></h3></div>
+    <div class="grid">
+        <div class="card">
+            <img src="IMG_8683.jpeg" alt="Junkie">
+            <div style="padding:25px;">
+                <h3 style="display:flex; justify-content:space-between;">Divine Junkie <span style="color:var(--red)">570</span></h3>
             </div>
         </div>
+        <div class="card">
+            <img src="IMG_8686.jpeg" alt="Triple">
+            <div style="padding:25px;">
+                <h3 style="display:flex; justify-content:space-between;">Triple Stuffed <span style="color:var(--red)">630</span></h3>
+            </div>
+        </div>
+    </div>
 
-        <div class="full-menu">
-            <div class="menu-columns">
-                <div class="menu-cat">
-                    <h3>CLASSICS</h3>
-                    <div class="menu-item"><span>Cheesy Burger</span> <span>450</span></div>
-                    <div class="menu-item"><span>California Style</span> <span>490</span></div>
-                </div>
-                <div class="menu-cat">
-                    <h3>SIGNATURE MELTS</h3>
-                    <div class="menu-item"><span>Double Cheesy</span> <span>600</span></div>
-                    <div class="menu-item"><span>Double Sausage</span> <span>590</span></div>
-                </div>
-                <div class="menu-cat">
-                    <h3>HEAVENLY CHICKEN</h3>
-                    <div class="menu-item"><span>Crispy Chicken</span> <span>720</span></div>
-                    <div class="menu-item"><span>Smokin Spicy</span> <span>500</span></div>
-                </div>
+    <section class="menu-section">
+        <div class="menu-grid">
+            <div>
+                <div class="cat-title">Classics</div>
+                <div class="item"><span>Cheesy Burger</span> <span>450</span></div>
+                <div class="item"><span>California Style</span> <span>490</span></div>
+            </div>
+            <div>
+                <div class="cat-title">Signature Melts</div>
+                <div class="item"><span>Double Cheesy</span> <span>600</span></div>
+                <div class="item"><span>Double Sausage</span> <span>590</span></div>
             </div>
         </div>
     </section>
 
-    <section id="location" style="padding: 60px 5%; background: #f9f9f9;">
-        <h2 style="text-align:center; font-family:'Inter'; margin-bottom: 30px;">VISIT US IN BOLE</h2>
-        <div style="max-width: 1200px; margin: 0 auto; height: 400px; border: 2px solid var(--red);">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.5!2d38.7!3d8.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwNTknNDAuMiJOIDM4wrA0NycwNi4wIkU!5e0!3m2!1sen!2set!4v123456789" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <section style="padding: 100px 5%; text-align: center; background: #000;">
+        <h2 style="font-family:'Inter'; margin-bottom: 40px; font-size: 2rem;">BOLE, BEHIND SHEGER</h2>
+        <div style="height: 400px; border-radius: 20px; overflow: hidden; filter: invert(90%) hue-rotate(180deg) brightness(1.5);">
+            <iframe src="http://googleusercontent.com/maps.google.com/7" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
-    <footer style="padding: 60px 5%; text-align: center;">
-        <p style="font-weight:900;">DIVINE BURGER ADDIS ABABA</p>
-        <p style="font-size:12px; color:#777; margin-top:10px;">Bole, Behind Sheger Building</p>
+    <footer style="padding: 100px 5%; text-align: center; opacity: 0.5; font-size: 12px;">
+        <p>© 2026 DIVINE BURGER ADDIS ABABA. THE NEW STANDARD.</p>
     </footer>
 
     <div class="mobile-cta">
-        <a href="tel:0965966465" style="background:#000; color:white; margin-right:8px;">CALL NOW</a>
+        <a href="tel:0965966465" style="background:white; color:black; margin-right:5px;">CALL</a>
         <a href="https://wa.me/251965966465" style="background:var(--red); color:white;">WHATSAPP</a>
     </div>
+
 </body>
 </html>
